@@ -1,16 +1,14 @@
 CREATE OR REPLACE PROCEDURE ADMIN.GENERATE_MERGE_SCRIPT (
 
-/*-------------------------------------------------------------------------------
+/*-----------------------------------------------------------------------------------------------------------------------------
   Procedure:	ORACLE UTILITIES MERGE SCRIPT GENERATOR
 	 Author:	Sheldon Bateman (sheldon@gravityconsultingus.com)
 	Created:	2025/04/29
 	Version:	v0.1-beta
 	 Status:	Passed Unit Testing	
-	Purpose:	Dynamic generator for Oracle MERGE scripts aligned to Oracle 
-				Utilities Application Framework (OUAF) standards, handling 
-				Maintenance Object (MO) JSON parsing, key-based ON clauses, 
-				and full datatype mappings.
-				Execute with parameters (examples):
+	Purpose:	Dynamic generator for Oracle MERGE scripts aligned to Oracle Utilities Application Framework (OUAF) 
+			standards, handling Maintenance Object (MO) JSON parsing, key-based ON clauses, and full datatype mappings.
+			Execute with parameters (examples):
 				BEGIN
 				  ADMIN.GENERATE_MERGE_SCRIPT(
 					p_target_schema   => 'CISADM',
@@ -20,13 +18,13 @@ CREATE OR REPLACE PROCEDURE ADMIN.GENERATE_MERGE_SCRIPT (
 				  );
 				END;
 				/
----------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------
 Change History
 
  YYYY/MM/DD:	developer full name  
 	(* / + / -) A comprehensive description of the changes.
 		
--------------------------------------------------------------------------------*/
+-----------------------------------------------------------------------------------------------------------------------------*/
 
 
     p_target_schema   IN VARCHAR2,
