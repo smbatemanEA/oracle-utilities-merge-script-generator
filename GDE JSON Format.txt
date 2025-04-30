@@ -1,0 +1,35 @@
+The Generalized Data Export (GDE)  file contains information about the Maintenance Object (MO) along with the exported data pertaining to that MO, in JSON format. 
+Below is a sample record format of the export file:
+
+{
+"OBJ": "<Specifies the MO Name>",
+"TIMESTAMP": "<The time of export in ISO format for example 2019-07-25T11:06:04.740615Z>",
+"PK1": "<Maintenance Object’s pk1 value>",
+"PK2": "< Maintenance Object’s pk2 value if any>",
+"PK3": "< Maintenance Object’s pk3 value if any>",
+"PK4": "< Maintenance Object’s pk4 value if any>",
+"PK5": "< Maintenance Object’s pk5 value if any>",
+"DELETED": true,
+"DATA":
+{
+"<Maintenance Object’s table name 1>":
+[
+{<name value pairs of all fields in row 1 in that table>},
+{<name value pairs of all fields in row 2 in that table>},...
+{<name value pairs of all fields in row n in that table>},...
+],
+"< Maintenance Object’s table name 2>":
+[
+{<name value pairs of all fields in row 1 in that table>},
+{<name value pairs of all fields in row 2 in that table>},...
+{<name value pairs of all fields in row n in that table>}
+],...
+"< Maintenance Object’s table name n>":
+[
+{<name value pairs of all fields in row 1 in that table>},
+{<name value pairs of all fields in row 2 in that table>},...
+{<name value pairs of all fields in row n in that table>}
+] }
+
+
+In the export file, the DELETED indicator is included only if the MO has been deleted and null values in tables are exported as empty strings.
